@@ -36,9 +36,9 @@ public class PmbImageFilter {
         long start1 = System.nanoTime();
         BigDecimal[][] mth = getFilteredImageMth(img,fil);
         long stop1 = System.nanoTime();
-        System.out.println("Wykonywanie sekwencyjne: " + (stop1 - start1) + " ns");
+        System.out.println("Wykonywanie wielowątkowe: " + (stop1 - start1) + " ns");
         
-        saveToFile(seq, true);
+        saveToFile(mth, true);
     }
     
     private static BigDecimal getFilteredValue(int i, int j, int[][] image, BigDecimal[][] filter){
